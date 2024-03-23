@@ -1,6 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './views/Home'
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/now-ui-kit.css";
 import "./assets/demo/demo.css";
@@ -8,37 +6,21 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/scss/now-ui-kit.scss?v=1.5.0";
 import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
-import React from 'react';
-import MainNavbar from './components/MainNavbar';
-import Login from './views/Login';
-
-
+import Admin from './Admin';
+import Client from './Client';
+import { ClientAuthProvider } from './ClientAuth';
+import { AdminAuthProvider } from './AdminAuth';
 function App() {
-  React.useEffect(() => {
-    document.body.classList.add("index-page");
-    document.body.classList.add("sidebar-collapse");
-    document.documentElement.classList.remove("nav-open");
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
-      document.body.classList.remove("index-page");
-      document.body.classList.remove("sidebar-collapse");
-    };
-  });
   return (
-    <>
-      <BrowserRouter>
-      <MainNavbar />
-        <Routes>
-          <Route path="/index" element={<Home />} />
-          {/* <Route path="/landing-page" element={<LandingPage />} />
-          <Route path="/profile-page" element={<ProfilePage />} />*/
-          <Route path="/login" element={<Login />} /> }
-
-          <Route path="*" element={<Navigate to="/index" replace />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div className="app">
+      {
+        window.location.pathname === "/admin" || window.location.pathname === "/dashboard"
+        ? 
+        <AdminAuthProvider> <Admin /> </AdminAuthProvider >
+        : 
+        <ClientAuthProvider> <Client /> </ClientAuthProvider >
+      }
+    </div>
   )
 }
 

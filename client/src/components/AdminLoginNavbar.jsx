@@ -16,7 +16,7 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-function ExamplesNavbar() {
+export default function AdminLoginNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -50,8 +50,8 @@ function ExamplesNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
-        <Container>
-          <UncontrolledDropdown className="button-dropdown">
+        <div className="flex container justify-between items-between">
+          {/* <UncontrolledDropdown className="button-dropdown">
             <DropdownToggle
               caret
               data-toggle="dropdown"
@@ -86,17 +86,17 @@ function ExamplesNavbar() {
                 One more separated link
               </DropdownItem>
             </DropdownMenu>
-          </UncontrolledDropdown>
-          <div className="navbar-translate">
+          </UncontrolledDropdown> */}
+          <div className="navbar-translate flex justify-center items-center">
             <NavbarBrand
               href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
               target="_blank"
               id="navbar-brand"
             >
-              Now Ui Kit
+              S A S Admin Login
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
+              Designed by Team Spark. Coded by Team Spark
             </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"
@@ -119,13 +119,8 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                  Back to Kit
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/now-ui-kit-react/issues?ref=creativetim">
-                  Have an issue?
+                <NavLink href="/index">
+                  Back to Website
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -169,10 +164,9 @@ function ExamplesNavbar() {
               </NavItem>
             </Nav>
           </Collapse>
-        </Container>
+        </div>
       </Navbar>
     </>
   );
 }
 
-export default ExamplesNavbar;

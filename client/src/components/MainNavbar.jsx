@@ -1,13 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
   Button,
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -15,8 +10,10 @@ import {
   Nav,
   UncontrolledTooltip,
 } from "reactstrap";
+import { useAuth } from "../ClientAuth";
 
 export default function MainNavbar() {
+  const { IsUserLoggedIn,  clientLogout } = useAuth();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -54,8 +51,7 @@ export default function MainNavbar() {
         <div className="container flex">
           <div className="navbar-translate">
             <NavbarBrand
-              href="https://google.com"
-              target="_blank"
+              href="/index"
               id="navbar-brand"
             >
               <div className="brand-heading flex items-center justify-center">
@@ -212,12 +208,12 @@ export default function MainNavbar() {
                 <Button
                   className="nav-link"
                   style={{backgroundColor: '#15803d'}}
-                  href="/login"
+                  href={"/login"}
                   id="upgrade-to-pro"
-                  target="_blank"
+                  onClick={IsUserLoggedIn ? clientLogout : () => {}}
                 >
                   <i className="now-ui-icons users_circle-08 mr-1"></i>
-                  <p>Login/Sign Up</p>
+                  <p>{IsUserLoggedIn ? "Logout" : "Login/Sign Up"}</p>
                 </Button>
               </NavItem>
             </Nav>

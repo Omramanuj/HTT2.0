@@ -41,7 +41,7 @@ const Login = () => {
       const response = await axios.post('http://localhost:5001/users/login', formData);
       if (response.status == 200) {
         const { token } = response.data;
-        localStorage.setItem('token', token);
+        localStorage.setItem('clientToken', token);
         navigate('/dashboard', { replace: true });
       }
       window.location.reload();
@@ -59,7 +59,7 @@ const Login = () => {
 
         if (response.status == 200) {
             const { token } = response.data;
-            localStorage.setItem('token', token);
+            localStorage.setItem('clientToken', token);
             navigate('/dashboard', { replace: true });
         }
         window.location.reload();
