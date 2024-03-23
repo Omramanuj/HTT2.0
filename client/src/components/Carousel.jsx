@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // reactstrap components
 import {
@@ -60,7 +60,7 @@ export default function CarouselSection() {
           <div className="title text-lg mb-[5rem]">
             <h4>Why Choose Us?</h4>
           </div>
-          <div className="whyUs flex justify-center font-semibold font-mont text-green-700">
+          <div className="flex justify-center font-semibold font-mont text-green-700">
             A joyful investment in your body,
             mind and spirit
           </div>
@@ -124,33 +124,3 @@ export default function CarouselSection() {
     </>
   );
 }
-
-// import { Carousel } from "react-bootstrap";
-
-// export default function CarouselSection() {
-//   const [index, setIndex] = useState(0);
-//   const handleSelect = (selectedIndex, e) => {
-//     setIndex(selectedIndex);
-//   };
-
-//   return (
-//     <Carousel activeIndex={index} onSelect={handleSelect}>
-//        {items.map((item, i) => {
-//         return (
-//           <Carousel.Item>        
-//         <img
-//           className="d-block w-100"
-//           src={item.src}
-//           alt="slider image"
-//         />
-//         <Carousel.Caption>
-//           <h3>{item.caption}</h3>
-//           <p>{item.altText}</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//         )
-//       })}
-      
-//     </Carousel>
-//   );
-// }

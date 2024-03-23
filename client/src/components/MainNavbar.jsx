@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+
 // reactstrap components
 import {
   Button,
@@ -16,14 +18,16 @@ export default function MainNavbar() {
   const { IsUserLoggedIn,  clientLogout } = useAuth();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const location = useLocation();
+  
   React.useEffect(() => {
+    if(location.pathname === '/index' || location.pathname === '/login'){
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 399 ||
         document.body.scrollTop > 399
       ) {
         setNavbarColor("");
-        setNavbarColor("success-navbar");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
@@ -34,8 +38,9 @@ export default function MainNavbar() {
     window.addEventListener("scroll", updateNavbarColor);
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
+    };}
+  }, []);
+
   return (
     <>
       {collapseOpen ? (
@@ -47,7 +52,7 @@ export default function MainNavbar() {
           }}
         />
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} expand="lg" style={{backgroundColor: '#15803d'}}>
+      <Navbar className={"fixed-top " + ((location.pathname === '/index' || location.pathname === '/login') ? navbarColor : "")} expand="lg" style={{backgroundColor: '#15803d'}}>
         <div className="container flex">
           <div className="navbar-translate">
             <NavbarBrand
@@ -126,28 +131,21 @@ export default function MainNavbar() {
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("download-section")
-                      .scrollIntoView();
-                  }}
-                >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p>Treatment & Services</p>
-                </NavLink>
+               
+                  <NavLink
+                    href="/services"
+                    
+                  >
+                    {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                    <p>Treatment & Services</p>
+                  </NavLink>
+                
               </NavItem>
+              
               <NavItem>
                 <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("download-section")
-                      .scrollIntoView();
-                  }}
+                  href="/aboutus"
+                 
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
                   <p>About Us</p>

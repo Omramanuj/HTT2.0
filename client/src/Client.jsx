@@ -1,8 +1,20 @@
 import React from 'react';
-import Home from './views/Home'
 import MainNavbar from './components/MainNavbar';
 import Login from './views/Login';
+import Services from './pages/Services';
+import Footer from './components/Footers/footer';
+import Aboutus from './pages/AboutUs';
 import { Navigate, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home';
+
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/now-ui-kit.css";
+import "./assets/demo/demo.css";
+import "./assets/css/bootstrap.min.css";
+import "./assets/scss/now-ui-kit.scss?v=1.5.0";
+import "./assets/demo/demo.css?v=1.5.0";
+import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
+
 export default function Client() {
     React.useEffect(() => {
         document.body.classList.add("index-page");
@@ -21,10 +33,9 @@ export default function Client() {
       <MainNavbar />
         <Routes>
           <Route path="/index" element={<Home />} />
-          {/* <Route path="/landing-page" element={<LandingPage />} />
-          <Route path="/profile-page" element={<ProfilePage />} />*/
-          <Route path="/login" element={<Login />} /> }
-
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/services" element={<Services />} />
+          <Route path="/aboutus" element={<Aboutus />} /> 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>
       

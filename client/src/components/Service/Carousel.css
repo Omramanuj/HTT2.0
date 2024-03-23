@@ -1,0 +1,27 @@
+/* Carousel.css */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    max-width: 100%; 
+    max-height:40%/* Limit the carousel's width */
+  }
+  
+  .carousel-item {
+    flex: none; /* Prevent carousel items from growing or shrinking */
+    position: relative;
+    padding: 10px; /* Optional: Adds some space between carousel items */
+  }
+  
+  .carousel-item img {
+    max-width: 100%; /* Ensure images don't exceed the width of the carousel item */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+  }
+  

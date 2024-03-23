@@ -1,4 +1,5 @@
 import './App.css'
+
 import "./assets/css/bootstrap.min.css";
 import "./assets/css/now-ui-kit.css";
 import "./assets/demo/demo.css";
@@ -6,6 +7,7 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/scss/now-ui-kit.scss?v=1.5.0";
 import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
+
 import Admin from './Admin';
 import Client from './Client';
 import { ClientAuthProvider } from './ClientAuth';
@@ -21,6 +23,7 @@ function App() {
         <ClientAuthProvider> <Client /> </ClientAuthProvider >
       }
     </div>
+
   )
 }
 
