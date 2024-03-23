@@ -10,6 +10,7 @@ import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import React from 'react';
 import MainNavbar from './components/MainNavbar';
+import Login from './views/Login';
 
 
 function App() {
@@ -31,8 +32,8 @@ function App() {
         <Routes>
           <Route path="/index" element={<Home />} />
           {/* <Route path="/landing-page" element={<LandingPage />} />
-          <Route path="/profile-page" element={<ProfilePage />} />
-          <Route path="/login-page" element={<LoginPage />} /> */}
+          <Route path="/profile-page" element={<ProfilePage />} />*/
+          <Route path="/login" element={<Login />} /> }
 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>

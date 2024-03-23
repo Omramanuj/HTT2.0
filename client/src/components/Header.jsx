@@ -35,14 +35,13 @@ export default function Header() {
                 <div className="flex flex-col">
                     <div className="intro brand m-[8rem]">
                         <h1 className="h1-seo">
-                            Hi I'm Fatima Fiasal
+                            S A S
                         </h1>
                         Start Your Fitness Journey Today
                     </div>
                     <div className="content-center brand font-bold">
                         <h1 className="h1-seo">Fat To Slim</h1>
                         <h3>EAT | SLEEP | LOSE WEIGHT</h3>
-
                     </div>
                 </div>
             </div>

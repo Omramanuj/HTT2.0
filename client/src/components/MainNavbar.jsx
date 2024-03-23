@@ -90,6 +90,45 @@ export default function MainNavbar() {
             navbar
           >
             <Nav navbar>
+            <NavItem>
+                <NavLink
+                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  target="_blank"
+                  id="twitter-tooltip"
+                >
+                  <i className="fab fa-twitter"></i>
+                  <p className="d-lg-none d-xl-none">Twitter</p>
+                </NavLink>
+                <UncontrolledTooltip target="#twitter-tooltip">
+                  Follow us on Twitter
+                </UncontrolledTooltip>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  target="_blank"
+                  id="facebook-tooltip"
+                >
+                  <i className="fab fa-facebook-square"></i>
+                  <p className="d-lg-none d-xl-none">Facebook</p>
+                </NavLink>
+                <UncontrolledTooltip target="#facebook-tooltip">
+                  Like us on Facebook
+                </UncontrolledTooltip>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  target="_blank"
+                  id="instagram-tooltip"
+                >
+                  <i className="fab fa-instagram"></i>
+                  <p className="d-lg-none d-xl-none">Instagram</p>
+                </NavLink>
+                <UncontrolledTooltip target="#instagram-tooltip">
+                  Follow us on Instagram
+                </UncontrolledTooltip>
+              </NavItem>
               <NavItem>
                 <NavLink
                   href="#pablo"
@@ -165,48 +204,21 @@ export default function MainNavbar() {
                   id="upgrade-to-pro"
                   target="_blank"
                 >
-                  <i className="now-ui-icons arrows-1_share-66 mr-1"></i>
+                  <i className="now-ui-icons ui-1_calendar-60 mr-1"></i>
                   <p>Book An Appointment</p>
                 </Button>
               </NavItem>
               <NavItem>
-                <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                <Button
+                  className="nav-link"
+                  style={{backgroundColor: '#15803d'}}
+                  href="/login"
+                  id="upgrade-to-pro"
                   target="_blank"
-                  id="twitter-tooltip"
                 >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
+                  <i className="now-ui-icons users_circle-08 mr-1"></i>
+                  <p>Login/Sign Up</p>
+                </Button>
               </NavItem>
             </Nav>
           </Collapse>
