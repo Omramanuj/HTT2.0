@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router({mergeParams: true});
-import deleteAllImages,{loginUser,signupUser,saveImageForUser,getAllImagesForUser, getImageData} from '../controllers/UserController.js';
+import {loginUser,signupUser, updateUserPageVisits} from '../controllers/UserController.js';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
 
@@ -36,12 +36,9 @@ router.post('/signup', (req, res) => {
     signupUser(req, res);
 });
 
+router.post('/UpdatePagesVisited',(req,res)=>{
+    updateUserPageVisits(req,res);
+});
 // Route to save an image for a user
-router.put('/:userId/images', saveImageForUser);
-
-// Route to get all images for a user
-router.get('/:userId/images', getAllImagesForUser);
-router.get('/:imageId', getImageData);
-router.delete('/deleteImage',deleteAllImages);
 
 export default router;

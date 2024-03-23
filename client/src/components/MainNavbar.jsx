@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -13,9 +13,12 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 import { useAuth } from "../ClientAuth";
+import { usePageVisits } from "../PageVisitContext"; // Adjust the import path as necessary
+
 
 export default function MainNavbar() {
   const { IsUserLoggedIn,  clientLogout } = useAuth();
+  const { incrementPageVisit } = usePageVisits();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const location = useLocation();
@@ -41,10 +44,18 @@ export default function MainNavbar() {
     };}
   }, []);
 
+
+  const handleNavLinkClick = (pageName) => {
+    console.log(`NavLink clicked for ${pageName}`);
+    incrementPageVisit(pageName);
+     // Increment the page visit counter
+  };
+
   return (
-    <>
+    <div >
       {collapseOpen ? (
         <div
+        
           id="bodyClick"
           onClick={() => {
             document.documentElement.classList.toggle("nav-open");
@@ -132,20 +143,21 @@ export default function MainNavbar() {
               </NavItem>
               <NavItem>
                
-                  <NavLink
-                    href="/services"
-                    
+                  <Link
+                    to="/services"
+                     onClick={() => handleNavLinkClick('services')}
+                     className="nav-link"
                   >
                     {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
                     <p>Treatment & Services</p>
-                  </NavLink>
+                  </Link>
                 
               </NavItem>
               
               <NavItem>
                 <NavLink
                   href="/aboutus"
-                 
+                  onClick={() => handleNavLinkClick('aboutUs')}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
                   <p>About Us</p>
@@ -218,6 +230,6 @@ export default function MainNavbar() {
           </Collapse>
           </div>
       </Navbar>
-    </>
+    </div>
   );
 }

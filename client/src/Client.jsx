@@ -14,8 +14,12 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/scss/now-ui-kit.scss?v=1.5.0";
 import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
+import { PageVisitsProvider } from './PageVisitContext';
 
 export default function Client() {
+  
+ 
+
     React.useEffect(() => {
         document.body.classList.add("index-page");
         document.body.classList.add("sidebar-collapse");
@@ -26,10 +30,10 @@ export default function Client() {
           document.body.classList.remove("index-page");
           document.body.classList.remove("sidebar-collapse");
         };
-      });
+      },[]);
   return (
     <>
-      
+      <PageVisitsProvider>
       <MainNavbar />
         <Routes>
           <Route path="/index" element={<Home />} />
@@ -38,7 +42,7 @@ export default function Client() {
           <Route path="/aboutus" element={<Aboutus />} /> 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>
-      
+      </PageVisitsProvider>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router({mergeParams: true});
-import {loginAdminUser,signupAdminUser} from '../controllers/AdminController.js';
+import {getAllUsersPageVisits, loginAdminUser,signupAdminUser} from '../controllers/AdminController.js';
 import jwt from 'jsonwebtoken';
 import  {Admin}  from '../models/Admin.js';
 
@@ -29,7 +29,7 @@ router.get('/login', verifyToken , async (req, res) => {
     const currUser = await Admin.findById(req.user.id);
     res.json({name: currUser.name, email: currUser.email});
 });
-
+router.get('/allUsersInfo',getAllUsersPageVisits);
 // Route to handle user signup
 router.post('/signup', (req, res) => {
     signupAdminUser(req, res);

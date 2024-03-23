@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 import bcrypt from 'bcrypt';
 
+
+
 const userSchema = new Schema({
     name: String,
     email: {
@@ -14,11 +16,15 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    images: [{
-        type: Schema.Types.ObjectId,
-      ref: 'ImageSchema'
-    }]
+    services: { type: Number, default: 0 },
+    aboutUs: { type: Number, default: 0 },
+    nutritionStrategy: { type: Number, default: 0 },
+    ayurveda: { type: Number, default: 0 },
+    protien: { type: Number, default: 0 },
+    diet: { type: Number, default: 0 },
 })
+
+
 
     // validating email and password
 userSchema.statics.signup = async function (email, password) {

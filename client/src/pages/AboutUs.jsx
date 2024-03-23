@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useEffect} from "react";
 import Character from "/assets/img/deit1.avif";
 import join from "/assets/img/second.webp";
 import RoundaboutLeftIcon from '@mui/icons-material/RoundaboutLeft';
@@ -9,7 +9,10 @@ import CallIcon from '@mui/icons-material/Call';
 
 
 
-export default function Aboutus  ()  {
+export default function Aboutus  ({})  {
+
+
+
   return (
     <>
     <div className="flex justify-center">

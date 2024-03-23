@@ -5,22 +5,34 @@ export default function ServiceList() {
   const services = [
     {
       title: 'Strategies',
+      dbname: 'nutritionStrategy',
       image: 'https://fattoslimmbd.com/wp-content/uploads/sites/3/2020/06/service-01-770x350.jpg',
-      description:'Nutrition Strategy'
+      description:'Nutrition Strategy',
+      link:"https://www.health.harvard.edu/topics/diet-and-weight-loss#diet-weight-loss0",
     },
-    {title:'Ayurveda',
-image:'https://fattoslimmbd.com/wp-content/uploads/sites/3/2020/06/service-02-770x350.jpg',
-description:'Ayurveda Treatment'},
+    {
+      title:'Ayurveda',
+      dbname: 'ayurveda',
+      image:'https://fattoslimmbd.com/wp-content/uploads/sites/3/2020/06/service-02-770x350.jpg',
+      description:'Ayurveda Treatment',
+      link:"https://www.healthline.com/health/ayurvedic-medicine-for-weight-loss#otc-capsules",
+  },
+
 {
-  title:'Protien',
+  title:'protien',
+  dbname: 'protien',
   image:'https://fattoslimmbd.com/wp-content/uploads/sites/3/2020/06/service-04-770x350.jpg',
-  description:'diet and fitness'
+  description:'diet and fitness',
+  link:"https://www.betterhealth.vic.gov.au/health/healthyliving/protein",
 },
 {
-  title:'Diet',
+  title:'diet',
+  dbname: 'diet',
   image:'https://fattoslimmbd.com/wp-content/uploads/sites/3/2020/06/service-03-770x350.jpg',
-  description:'Nutritionally balanced'
+  description:'Nutritionally balanced',
+  link:"https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eating-a-balanced-diet/#:~:text=eat%20at%20least%205%20portions,eggs%2C%20meat%20and%20other%20protein",
 },
+
 
 
   ];
@@ -37,7 +49,7 @@ description:'Ayurveda Treatment'},
   return (
     <div className='ServiceList' style={listContainerStyle}>
       {services.map((service, index) => (
-        <ServiceCard key={index} title={service.title} image={service.image} description={service.description}/>
+        <ServiceCard key={index} title={service.title} dbname={service.dbname} image={service.image} description={service.description} link = {service.link}/>
       ))}
     </div>
   );
