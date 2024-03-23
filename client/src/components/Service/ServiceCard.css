@@ -1,0 +1,63 @@
+/* ServiceCard.module.css */
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 200px;
+    color: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .image {
+    transform: scale(1.1);
+  }
+  
+  .title {
+    z-index: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    color: black;
+    transition: bottom 0.3s ease;
+    position: absolute;
+    bottom: -50px; /* Start off the screen */
+    left: 0;
+  }
+  
+  .card:hover .title {
+    bottom: 20px; /* Move into view */
+  }
+  
+  .arrow {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    color: black;
+    font-size: 2rem;
+    background-color: white;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover .arrow {
+    background-color: #436850; /* Green background on hover */
+  }
+  

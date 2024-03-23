@@ -64,11 +64,11 @@ function BMICalculator() {
     
 
   return (
-    <div className="akhu bg-green-700  text-white p-10 ">
+    <div className="akhu m-3 bg-green-700  text-white p-10 rounded-lg ">
       <div className="max-w-6xl mx-auto">
         <div>Compute BMI</div>
         <h2 className="text-3xl font-bold mb-5">Calculate Your Body Mass Index</h2>
-        <div className="flex items-center gap-5 mb-5">
+        <div className="flex items-center gap-2 mb-2">
           <label className='mr-4'>
             <input 
               type="radio" 
