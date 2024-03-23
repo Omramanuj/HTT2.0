@@ -14,6 +14,8 @@ import MainNavbar from './components/MainNavbar';
 import Services from './pages/Services';
 
 import Login from './views/Login';
+import Footer from './components/Footers/footer';
+import Aboutus from './pages/AboutUs';
 
 
 
@@ -45,9 +47,12 @@ function App() {
 
           <Route path="/login" element={<Login />} /> 
 
+          <Route path="/aboutus" element={<Aboutus />} /> 
+
 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>
+        <Footer/>
      
     </>
   )
