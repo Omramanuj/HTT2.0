@@ -13,8 +13,6 @@ export default function Home() {
         <Header />
       </div>
       <CarouselSection />
-      <Consultation />
-
     </div>
   )
 }

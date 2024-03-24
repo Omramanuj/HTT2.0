@@ -16,6 +16,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    phone: {
+        type: Number,
+    },
     services: { type: Number, default: 0 },
     aboutUs: { type: Number, default: 0 },
     nutritionStrategy: { type: Number, default: 0 },

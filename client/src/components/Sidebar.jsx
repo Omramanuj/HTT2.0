@@ -5,12 +5,10 @@ import { useMediaQuery } from 'react-responsive';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import AddIcon from '@mui/icons-material/Add';
 import { IconButton } from '@mui/material';
-import FeedIcon from '@mui/icons-material/Feed';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useAuth } from '../AdminAuth';
 
 
@@ -31,7 +29,7 @@ export default function Sidebar() {
             setExpanded(false);
             setSidebarWidth('70vw');
         }
-        setSelected(pathname == '/dashboard' ? 0 : pathname == '/users' ? 1 : pathname == '/editor' ? 2 : pathname == '/inventory' ? 3 : pathname == '/aboutus' ? 4 : 0)
+        setSelected(pathname == '/dashboard' ? 0 : pathname == '/users' ? 1 : pathname == '/whatsappservice' ? 2 : pathname == '/inventory' ? 3 : pathname == '/aboutus' ? 4 : 0)
     }, [isDesktopOrLaptop, isTabletOrMobile, location]);
 
 
@@ -46,21 +44,11 @@ export default function Sidebar() {
             route: "/users",
             icon: <AddIcon fontSize='small' />
         },
-        // {
-        //     name: "Editor",
-        //     route: "/editor",
-        //     icon: <BorderColorIcon fontSize='small' />
-        // },
-        // {
-        //     name: "Customizer",
-        //     route: "/customize",
-        //     icon: <AutoFixHighIcon fontSize='small' />
-        // },
-        // {
-        //     name: "About Us",
-        //     route: "/aboutus",
-        //     icon: <FeedIcon fontSize='small' />
-        // }
+        {
+            name: "Whatsapp Now",
+            route: "/whatsappservice",
+            icon: <WhatsAppIcon fontSize='small' />
+        },
     ];
 
 

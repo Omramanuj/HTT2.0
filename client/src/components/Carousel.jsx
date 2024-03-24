@@ -14,7 +14,7 @@ import {
 
 const items = [
   {
-    src: "/assets/img/bg1.jpg",
+    src: "/assets/img/bg1.avif",
     altText: "Nature, United States",
     caption: "Personalised Nutrition Plan"
   },
@@ -85,7 +85,7 @@ export default function CarouselSection() {
                       onExited={onExited}
                       key={item.src}
                     >
-                      <img src={item.src} alt={item.altText} />
+                      <img className="w-full" src={item.src} alt={item.altText} />
                       <div className="carousel-caption d-none d-md-block text-lg">
                         <h5>{item.caption}</h5>
                       </div>

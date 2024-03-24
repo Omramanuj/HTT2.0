@@ -17,10 +17,10 @@ export const loginUser = async (req, res) => {
 }
 
 export const signupUser = async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, phone, password } = req.body;
     try {
         const createdUser = await User.signup(email, password);
-        await User.findByIdAndUpdate(createdUser._id, {name})
+        await User.findByIdAndUpdate(createdUser._id, {name , phone})
 
         const token = createToken(createdUser._id);
         res.status(200).json({ token });

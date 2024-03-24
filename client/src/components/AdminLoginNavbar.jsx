@@ -51,45 +51,9 @@ export default function AdminLoginNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <div className="flex container justify-between items-between">
-          {/* <UncontrolledDropdown className="button-dropdown">
-            <DropdownToggle
-              caret
-              data-toggle="dropdown"
-              href="#pablo"
-              id="navbarDropdown"
-              tag="a"
-              onClick={(e) => e.preventDefault()}
-            >
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-            </DropdownToggle>
-            <DropdownMenu aria-labelledby="navbarDropdown">
-              <DropdownItem header tag="a">
-                Dropdown header
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Another action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Something else here
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Separated link
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                One more separated link
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown> */}
           <div className="navbar-translate flex justify-center items-center">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
+              href="/index"
               target="_blank"
               id="navbar-brand"
             >
@@ -125,7 +89,7 @@ export default function AdminLoginNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  href="https://twitter.com/"
                   target="_blank"
                   id="twitter-tooltip"
                 >
@@ -138,7 +102,7 @@ export default function AdminLoginNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  href="https://www.facebook.com/fattoslimmbd"
                   target="_blank"
                   id="facebook-tooltip"
                 >
@@ -151,7 +115,7 @@ export default function AdminLoginNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  href="https://www.instagram.com/Fat_to_slim_sas_mbd/"
                   target="_blank"
                   id="instagram-tooltip"
                 >

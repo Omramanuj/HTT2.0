@@ -104,7 +104,7 @@ export default function MainNavbar() {
             <Nav navbar>
             <NavItem>
                 <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  href="https://twitter.com/"
                   target="_blank"
                   id="twitter-tooltip"
                 >
@@ -117,7 +117,7 @@ export default function MainNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  href="https://www.facebook.com/fattoslimmbd"
                   target="_blank"
                   id="facebook-tooltip"
                 >
@@ -130,7 +130,7 @@ export default function MainNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  href="https://www.instagram.com/Fat_to_slim_sas_mbd/"
                   target="_blank"
                   id="instagram-tooltip"
                 >
