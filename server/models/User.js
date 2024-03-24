@@ -18,6 +18,7 @@ const userSchema = new Schema({
     },
     phone: {
         type: Number,
+        required: true,
     },
     services: { type: Number, default: 0 },
     aboutUs: { type: Number, default: 0 },
@@ -30,7 +31,7 @@ const userSchema = new Schema({
 
 
     // validating email and password
-userSchema.statics.signup = async function (email, password) {
+userSchema.statics.signup = async function (email, password, phone) {
     // checking for uniqueness of email
     const exists = await this.findOne({ email });
     if (exists)
@@ -39,7 +40,7 @@ userSchema.statics.signup = async function (email, password) {
     // if email is unique hash the password and create the user
     const salt = await bcrypt.genSalt(10);
     const hashPswd = await bcrypt.hash(password, salt);
-    const user = await this.create({ email, password: hashPswd });
+    const user = await this.create({ email, password: hashPswd, phone });
     return user;
 }
 
