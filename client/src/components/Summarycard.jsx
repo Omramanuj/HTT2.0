@@ -10,11 +10,11 @@ const Summarycard = () => {
       <div className="flex justify-around mb-8">
         <div>
           <p className="text-3xl font-bold">76%</p>
-          <p className="text-sm opacity-70">Income</p>
+          <p className="text-sm opacity-70">Traffic </p>
         </div>
         <div>
           <p className="text-3xl font-bold">44%</p>
-          <p className="text-sm opacity-70">Spendings</p>
+          <p className="text-sm opacity-70">Income</p>
         </div>
       </div>
 
@@ -22,7 +22,7 @@ const Summarycard = () => {
       <div className='mb-10'>
         <div className="flex items-center mb-4">
           <FaCheckCircle className="text-green-500 mr-2" />
-          <div>Use gen AI </div>
+          <div>To track our customers </div>
 
         </div>
         <div className="flex items-center mb-4">

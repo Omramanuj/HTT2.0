@@ -24,6 +24,8 @@ export default function TopBar() {
                             ? "About Us"
                                 : pathname == "/customize"
                                     ? "Customize"
+                                    : pathname == "/performance"
+                                        ? "Performance Report"
                                 : "Hello";
 
 

@@ -12,7 +12,8 @@ import { IconButton } from '@mui/material';
 import FeedIcon from '@mui/icons-material/Feed';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import { useAuth } from '../AdminAuth';
-
+import EditIcon from '@mui/icons-material/Edit';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
 
 export default function Sidebar() {
     const [expanded, setExpanded] = useState(true);
@@ -31,7 +32,7 @@ export default function Sidebar() {
             setExpanded(false);
             setSidebarWidth('70vw');
         }
-        setSelected(pathname == '/dashboard' ? 0 : pathname == '/users' ? 1 : pathname == '/editor' ? 2 : pathname == '/inventory' ? 3 : pathname == '/aboutus' ? 4 : 0)
+        setSelected(pathname == '/dashboard' ? 0 : pathname == '/users' ? 1 : pathname == '/performance' ? 2 : pathname == '/performance' ? 3 : pathname == '/aboutus' ? 4 : 0)
     }, [isDesktopOrLaptop, isTabletOrMobile, location]);
 
 
@@ -42,10 +43,17 @@ export default function Sidebar() {
             icon: <SpaceDashboardIcon fontSize='small' />
         },
         {
-            name: "Users",
+            name: "Edit Users",
             route: "/users",
-            icon: <AddIcon fontSize='small' />
+            icon: <EditIcon fontSize='small' />
         },
+        {
+            name: "Performance",
+            route: "/performance",
+            icon: <ColorLensIcon fontSize='small' />
+        },
+
+
         // {
         //     name: "Editor",
         //     route: "/editor",

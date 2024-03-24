@@ -36,7 +36,7 @@ router.get('/login', verifyToken , async (req, res) => {
     }
     const currUser = await User.findById(req.user.id);
 
-    res.json({userId:currUser.id,name: currUser.name, email: currUser.email});
+    res.json({userId:currUser?.id,name: currUser?.name, email: currUser?.email});
 });
 
 // Route to handle user signup
