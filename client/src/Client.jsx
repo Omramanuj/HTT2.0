@@ -2,7 +2,7 @@ import React from 'react';
 import MainNavbar from './components/MainNavbar';
 import Login from './views/Login';
 import Services from './pages/Services';
-import Footer from './components/Footers/footer';
+import Footer from './components/Footer';
 import Aboutus from './pages/AboutUs';
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
@@ -38,7 +38,7 @@ export default function Client() {
           <Route path="/aboutus" element={<Aboutus />} /> 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>
-      
+      <Footer />
     </>
   )
 }

@@ -17,7 +17,7 @@ export const AdminAuthProvider = ({ children }) => {
         console.log('Admin profile:', response);
         if (response.data) {
           setUserDetails(response.data);
-          // console.log(userDetails)
+          console.log(adminDetails)
           setLoggedIn(true);
         } else {
           logout();

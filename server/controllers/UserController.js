@@ -90,20 +90,19 @@ export const getImageData = async (req, res) => {
     }
 };
 
-const deleteAllImages = async (req, res) => {
+export const deleteAllSelectedEntries = async (req, res) => {
     try {
+        console.log(req.body);
         // Step 1: Delete all documents from the Images collection
-        await Images.deleteMany({});
+        // await User.deleteMany(req.body);
 
+        await User.deleteMany({_id: { $in: req.body}});
         // Step 2 (Optional): Clear the images array in all User documents
         // This step is necessary if you want to maintain referential integrity
-        await User.updateMany({}, { $set: { images: [] } });
-
-        res.send({ message: 'All images have been deleted successfully' });
+        res.send({ message: 'Selected Users have been deleted successfully' });
     } catch (error) {
         console.error('Error deleting images:', error);
-        res.status(500).send({ message: 'Error deleting images' });
+        res.status(500).send({ message: 'Error deleting Selected Users' });
     }
 };
 
-export default deleteAllImages;

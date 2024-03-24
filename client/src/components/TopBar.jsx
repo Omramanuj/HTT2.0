@@ -11,20 +11,20 @@ import { useAuth } from '../AdminAuth.jsx';
 export default function TopBar() {
     const { pathname } = useLocation();
 
-    const {userDetails} = useAuth();
+    const { adminDetails } = useAuth();
 
     let pageName =
         pathname == "/dashboard"
             ? "Dashboard"
-            : pathname == "/createnew"
-                ? "Create New Design"
+            : pathname == "/users"
+                ? "Users"
                 : pathname == "/editor"
                     ? "Customise Your Design"
                         : pathname == "/aboutus"
                             ? "About Us"
                                 : pathname == "/customize"
                                     ? "Customize"
-                                : "Error 404";
+                                : "Hello";
 
 
 
@@ -46,10 +46,10 @@ export default function TopBar() {
                 </div>
                 <div className="profile-data">
                     <div className="text-sm ml-2 m-1 font-bold profile-name">
-                       {mockAccountData.name}
+                       {adminDetails.name}
                     </div>
                     <div className="text-xs ml-2 m-1 profile-email">
-                        {mockAccountData.email}
+                        {adminDetails.email}
                     </div>
                 </div>
             </div>

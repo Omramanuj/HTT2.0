@@ -129,7 +129,7 @@ export default function AdminLoginPage() {
                     <Button
                       block
                       className="btn-round"
-                      color="info"
+                      style={{backgroundColor: "#15803d"}}
                       type="submit"
                       size="lg"
                     >

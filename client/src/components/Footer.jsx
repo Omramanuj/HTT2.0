@@ -1,14 +1,13 @@
 import React from 'react';
-import './footer.css';
+import './Footer.css';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { ClassNames } from '@emotion/react';
 
-const Footer=()=>{
+export default function Footer(){
     return(
-        <div className = "footer">
+        <div className = "Footer section mt-[12rem]">
             <div className='sb__footer-links section__padding'>
                 <div className='sb__footer-links'>
                 <div className='sb__footer-links-div'>
@@ -111,5 +110,3 @@ const Footer=()=>{
         </div>
     )
 }
-
-export default Footer;

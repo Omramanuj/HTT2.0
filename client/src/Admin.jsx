@@ -19,7 +19,7 @@ export default function Admin() {
       if(IsAdminLoggedIn) {
         navigate('/dashboard', { replace: true });
       }
-    })
+    },[])
   return (
     <div>
         {IsAdminLoggedIn ? <Activity /> : <AdminLoginPage />}

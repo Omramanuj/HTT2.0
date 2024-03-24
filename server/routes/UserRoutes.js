@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router({mergeParams: true});
-import deleteAllImages,{loginUser,signupUser,saveImageForUser,getAllImagesForUser, getImageData} from '../controllers/UserController.js';
+import {loginUser,signupUser,deleteAllSelectedEntries} from '../controllers/UserController.js';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
 
@@ -20,6 +20,11 @@ const verifyToken = (req, res, next) => {
     });
 };
 
+router.get('/' ,async (req,res) => {
+    const usersData = await User.find({});
+    res.json(usersData);
+});
+
 // Route to handle user login
 router.post('/login', (req, res) => {
     loginUser(req, res);
@@ -36,12 +41,14 @@ router.post('/signup', (req, res) => {
     signupUser(req, res);
 });
 
-// Route to save an image for a user
-router.put('/:userId/images', saveImageForUser);
 
-// Route to get all images for a user
-router.get('/:userId/images', getAllImagesForUser);
-router.get('/:imageId', getImageData);
-router.delete('/deleteImage',deleteAllImages);
+
+// // Route to save an image for a user
+// router.put('/:userId/images', saveImageForUser);
+
+// // Route to get all images for a user
+// router.get('/:userId/images', getAllImagesForUser);
+// router.get('/:imageId', getImageData);
+router.delete('/delete', deleteAllSelectedEntries);
 
 export default router;

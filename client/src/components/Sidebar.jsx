@@ -31,7 +31,7 @@ export default function Sidebar() {
             setExpanded(false);
             setSidebarWidth('70vw');
         }
-        setSelected(pathname == '/dashboard' ? 0 : pathname == '/createnew' ? 1 : pathname == '/editor' ? 2 : pathname == '/inventory' ? 3 : pathname == '/aboutus' ? 4 : 0)
+        setSelected(pathname == '/dashboard' ? 0 : pathname == '/users' ? 1 : pathname == '/editor' ? 2 : pathname == '/inventory' ? 3 : pathname == '/aboutus' ? 4 : 0)
     }, [isDesktopOrLaptop, isTabletOrMobile, location]);
 
 
@@ -41,11 +41,11 @@ export default function Sidebar() {
             route: "/dashboard",
             icon: <SpaceDashboardIcon fontSize='small' />
         },
-        // {
-        //     name: "Create New",
-        //     route: "/createnew",
-        //     icon: <AddIcon fontSize='small' />
-        // },
+        {
+            name: "Users",
+            route: "/users",
+            icon: <AddIcon fontSize='small' />
+        },
         // {
         //     name: "Editor",
         //     route: "/editor",
@@ -90,10 +90,10 @@ export default function Sidebar() {
 
                 {mainMenuData.map((item, index) => (
                     <Link to={item.route} style={{ textDecoration: "none" }}>
-                        <div onClick={() => setSelected(index)} className={selected === index ? "hover:bg-[#222831] text-[#76ABAE] border-solid border-r-8 border-transparent border-[#76ABAE]" : "hover:bg-[#222831] border-solid border-r-8 border-transparent hover:border-[#76ABAE]"}>
-                            <div className={expanded ? "w-full pl-6 pt-3 pb-3 flex justify-center items-center " : "pt-3 pb-3 w-full flex justify-center"}>
+                        <div onClick={() => setSelected(index)} className={selected === index ? "hover:bg-[#222831] hover:text-[#76ABAE] text-[#76ABAE] border-solid border-r-8 border-transparent border-[#76ABAE]" : "hover:bg-[#222831] hover:text-[#76ABAE] border-solid border-r-8 border-transparent hover:border-[#76ABAE]"}>
+                            <div className={expanded ? "w-full hover:text-[#76ABAE] pl-6 pt-3 pb-3 flex justify-center items-center " : "pt-3 pb-3 hover:text-[#76ABAE] w-full flex justify-center"}>
                                 {item.icon}
-                                <div className={expanded ? "flex w-full pl-2 text-md" : "hidden"}>
+                                <div className={expanded ? "flex hover:text-[#76ABAE] w-full pl-2 text-md" : "hidden"}>
                                     {item.name}
                                 </div>
                             </div>

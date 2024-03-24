@@ -60,7 +60,7 @@ const Login = () => {
         if (response.status == 200) {
             const { token } = response.data;
             localStorage.setItem('clientToken', token);
-            navigate('/dashboard', { replace: true });
+            navigate('/index', { replace: true });
         }
         window.location.reload();
     } catch (error) {

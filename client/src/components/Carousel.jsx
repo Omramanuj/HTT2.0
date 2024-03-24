@@ -57,7 +57,7 @@ export default function CarouselSection() {
     <>
       <div className="section" id="carousel">
         <Container>
-          <div className="title text-lg mb-[5rem]">
+          <div className="whyUs font-bold text-lg mb-[5rem]">
             <h4>Why Choose Us?</h4>
           </div>
           <div className="flex justify-center font-semibold font-mont text-green-700">
