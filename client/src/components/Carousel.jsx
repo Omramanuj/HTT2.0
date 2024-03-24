@@ -1,58 +1,58 @@
 import React from "react";
-
+import { Carousel } from 'flowbite-react';
 // reactstrap components
 import {
   Container,
   Row,
   Col,
-  Carousel,
+  // Carousel,
   CarouselItem,
   CarouselIndicators
 } from "reactstrap";
 
-// core components
+// // core components
 
-const items = [
-  {
-    src: "/assets/img/bg1.avif",
-    altText: "Nature, United States",
-    caption: "Personalised Nutrition Plan"
-  },
-  {
-    src: "/assets/img/bg3.jpg",
-    altText: "Somewhere Beyond, United States",
-    caption: "Increased Energy Levels"
-  },
-  {
-    src: "/assets/img/bg4.jpg",
-    altText: "Yellowstone National Park, United States",
-    caption: "Benefits Of Balanced Diet"
-  }
-];
+// const items = [
+//   {
+//     src: "/assets/img/bg1.avif",
+//     altText: "Nature, United States",
+//     caption: "Personalised Nutrition Plan"
+//   },
+//   {
+//     src: "/assets/img/bg3.jpg",
+//     altText: "Somewhere Beyond, United States",
+//     caption: "Increased Energy Levels"
+//   },
+//   {
+//     src: "/assets/img/bg4.jpg",
+//     altText: "Yellowstone National Park, United States",
+//     caption: "Benefits Of Balanced Diet"
+//   }
+// ];
 
 export default function CarouselSection() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [animating, setAnimating] = React.useState(false);
-  const onExiting = () => {
-    setAnimating(true);
-  };
-  const onExited = () => {
-    setAnimating(false);
-  };
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
+  // const [activeIndex, setActiveIndex] = React.useState(0);
+  // const [animating, setAnimating] = React.useState(false);
+  // const onExiting = () => {
+  //   setAnimating(true);
+  // };
+  // const onExited = () => {
+  //   setAnimating(false);
+  // };
+  // const next = () => {
+  //   if (animating) return;
+  //   const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+  //   setActiveIndex(nextIndex);
+  // };
+  // const previous = () => {
+  //   if (animating) return;
+  //   const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+  //   setActiveIndex(nextIndex);
+  // };
+  // const goToIndex = (newIndex) => {
+  //   if (animating) return;
+  //   setActiveIndex(newIndex);
+  // };
   return (
     <>
       <div className="section" id="carousel">
@@ -67,7 +67,35 @@ export default function CarouselSection() {
 
           <Row className="justify-content-center">
             <Col lg="8" md="12">
-              <Carousel
+              <div className="h-56 sm:h-64 xl:h-[70vh] 2xl:h-96">
+                <Carousel slideInterval={1500}>
+                  <img src="/assets/img/bg1.avif" alt="..." />
+                  <img src="/assets/img/bg3.jpg" alt="..." />
+                  <img src="/assets/img/bg4.jpg" alt="..." />
+                  <img src="/assets/img/bg3.jpg" alt="..." />
+                  <img src="/assets/img/bg3.jpg" alt="..." />
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
+  );
+}
+
+
+
+// import React from 'react'
+
+// export default function CarouselSection() {
+//   return (
+    
+//   )
+// }
+
+
+{/* <Carousel
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
@@ -116,11 +144,4 @@ export default function CarouselSection() {
                 >
                   <i className="now-ui-icons arrows-1_minimal-right"></i>
                 </a>
-              </Carousel>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </>
-  );
-}
+              </Carousel> */}

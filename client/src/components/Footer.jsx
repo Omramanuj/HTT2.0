@@ -80,7 +80,7 @@ export default function Footer(){
 
                 <div className="sb_footer-below">
                     <div className="sb_footer-copyright m-1">
-                        <p>{new Date().getFullYear()} CodeInn. All right reserved.</p>
+                        <p>{new Date().getFullYear()} Spark. All right reserved.</p>
                     </div>
                     <div className="sb_footer-below-links">
                         <a href="">
