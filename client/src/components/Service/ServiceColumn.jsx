@@ -1,6 +1,7 @@
 // ServiceColumn.jsx
 import React from 'react';
 import './ServiceColumn.css'; // Ensure to create this CSS file
+import { Link } from 'react-router-dom';
 
 const ServiceColumn = ({ diseases }) => {
   return (
@@ -18,10 +19,19 @@ const ServiceColumn = ({ diseases }) => {
       </div>
       <div className="service-column-footer">
         <p>SAS FAT TO SLIM recognized for the pioneering & innovative work in the field of Obesity Control & Management with particular emphasis on developing new and effective ways & programs to combat Obesity.</p>
-        <button className="service-column-button">Book Now Appointment</button>
+        <Link
+          className="h-[4rem] btn btn-neutral"
+          style={{ backgroundColor: '#15803d', color: "white" }}
+          to="/appointment"
+          id="upgrade-to-pro"
+        >
+          <i className="now-ui-icons ui-1_calendar-60 mr-1"></i>
+          <p className='text-white'>Book An Appointment</p>
+        </Link>
       </div>
     </div>
   );
 };
+
 
 export default ServiceColumn;

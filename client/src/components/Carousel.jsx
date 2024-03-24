@@ -68,7 +68,7 @@ export default function CarouselSection() {
           <Row className="justify-content-center">
             <Col lg="8" md="12">
               <div className="h-56 sm:h-64 xl:h-[70vh] 2xl:h-96">
-                <Carousel slideInterval={1500}>
+                <Carousel slideInterval={1400}>
                   <img src="/assets/img/bg1.avif" alt="..." />
                   <img src="/assets/img/bg3.jpg" alt="..." />
                   <img src="/assets/img/bg4.jpg" alt="..." />
@@ -78,6 +78,12 @@ export default function CarouselSection() {
               </div>
             </Col>
           </Row>
+
+          <div className="lower-headings flex font-mont font-bold mt-[4rem] text-lg text-green-700 justify-between">
+              <div>Personalised Nutrition Plan</div>
+              <div>Increased Energy Levels</div>
+              <div>Benefits Of Balanced Diet</div>
+          </div>
         </Container>
       </div>
     </>
