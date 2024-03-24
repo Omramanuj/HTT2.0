@@ -1,6 +1,6 @@
 import {Admin} from '../models/Admin.js';
 import jwt from 'jsonwebtoken';
-
+import { User } from '../models/User.js';
 const createToken = (id) => {
     return jwt.sign({ id }, "mysecretcode", { expiresIn: '3d' });
 }
@@ -29,6 +29,20 @@ export const signupAdminUser = async (req, res) => {
     }
 }
 
+
+export const getAllUsersPageVisits = async (req, res) => {
+    try {
+      // Check if the request user is an admin
+  
+      // Fetch all users with their page visit data
+      const users = await User.find({}, 'name  email password services aboutUs nutritionStrategy ayurveda protien diet'); // Select specific fields to return
+      res.json(users);
+    } catch (error) {
+        console.log(error);
+      res.status(500).json({ message: 'Error fetching user data', error });
+    }
+  };
+  
 // // Controller method to save image for a user
 // export const saveImageForUser = async (req, res) => {
 //     try {

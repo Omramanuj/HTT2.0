@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './ServiceCard.css'; // Assuming you have some global styles in here
+import { usePageVisits } from '../../PageVisitContext';
 
-const ServiceCard = ({ image, title, description }) => {
+const ServiceCard = ({ image, title, dbname,description,link }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { incrementPageVisit } = usePageVisits();
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -11,6 +13,10 @@ const ServiceCard = ({ image, title, description }) => {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+  };
+
+  const handleClick = () => {
+    incrementPageVisit(dbname); // Use title to increment the visit count
   };
 
   const cardStyles = {
@@ -70,13 +76,15 @@ const ServiceCard = ({ image, title, description }) => {
   };
 
   return (
-    <div style={cardStyles} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div style={cardStyles} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
+      <a href={link} target='_blank'>
       <img src={image} alt={title} style={imageStyles} />
       <div style={infoBoxStyles}>
         <div style={titleStyles} className='cedarville-cursive-regular'>{title}</div>
         <div style={descriptionStyles} >{description}</div>
       </div>
       <ArrowRightAltIcon style={arrowStyles} color="inherit" />
+      </a>
     </div>
   );
 };

@@ -5,7 +5,6 @@ import bcrypt from 'bcrypt';
 
 const adminSchema = new Schema({
     name: String,
-    role: String,
     email: {
         type: String,
         required: true,
@@ -14,11 +13,7 @@ const adminSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-    images: [{
-        type: Schema.Types.ObjectId,
-      ref: 'ImageSchema'
-    }]
+    }
 })
 
     // validating email and password

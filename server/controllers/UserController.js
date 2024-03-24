@@ -28,81 +28,46 @@ export const signupUser = async (req, res) => {
         res.status(400).json({ error: error.message })
     }
 }
+ // Ensure correct path
 
-// Controller method to save image for a user
-export const saveImageForUser = async (req, res) => {
-    try {
+export const updateUserPageVisits = async (req, res) => {
+    const { userId, pageVisited } = req.body;
 
-        const user = await User.findById(req.params.userId); // Find the user by ID
-        if (!user) {
-            return res.status(404).send({ message: 'User not found' });
-        }
-        const {photo}=req.body;
-        // console.log(photo);
-        const newImage= new Images(
-            {
-                Data : photo
-            });
-            
-            const savedImage = await newImage.save();
-        await User.findByIdAndUpdate(req.params.userId, {
-             $push: { images: savedImage._id } 
-            }); 
-            res.status(201).send({ savedImage });
-        
-    } catch (error) {
-        res.status(500).send({ error: error.message });
+    if (!userId || !pageVisited) {
+        return res.status(400).json({ message: 'Invalid request format' });
     }
-};
 
-
-// Controller method to get all images for a user
-export const getAllImagesForUser = async (req, res) => {
     try {
-        const user = await User.findById(req.params.userId); // Find the user by ID
+        const user = await User.findById(userId);
+
         if (!user) {
-            return res.status(404).send({ message: 'User not found' });
-        }
-  
-        res.send({
-             images: user.images
-            });
-    } catch (error) {
-        res.status(500).send({ error: error.message });
-    }
-};
-
-
-export const getImageData = async (req, res) => {
-
-    try {
-        // Fetch image data from the database
-        const image = await Images.findById(req.params.imageId);
-        const imageData = image.Data;
-        if (!imageData) {
-            return res.status(404).json({ error: error.message});
+            return res.status(404).json({ message: 'User not found' });
         }
 
-        res.status(200).send({ image });
+        // Iterate over each page in the pageVisits object and update the counters
+        Object.entries(pageVisited).forEach(([pageName, incrementBy]) => {
+            if (typeof user[pageName] === 'number') { // Check if the field exists and is a number
+                user[pageName] += incrementBy;
+            }
+        });
+
+        await user.save();
+
+        return res.status(200).json({ message: 'Page visits updated successfully', user });
     } catch (error) {
-        console.error('Error fetching image data:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        console.log(error)
+        console.error('Error updating page visits:', error);
+        return res.status(500).json({ message: 'Server error' });
     }
 };
 
 export const deleteAllSelectedEntries = async (req, res) => {
     try {
         console.log(req.body);
-        // Step 1: Delete all documents from the Images collection
-        // await User.deleteMany(req.body);
-
         await User.deleteMany({_id: { $in: req.body}});
-        // Step 2 (Optional): Clear the images array in all User documents
-        // This step is necessary if you want to maintain referential integrity
         res.send({ message: 'Selected Users have been deleted successfully' });
     } catch (error) {
         console.error('Error deleting images:', error);
         res.status(500).send({ message: 'Error deleting Selected Users' });
     }
 };
-
