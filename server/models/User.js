@@ -20,7 +20,7 @@ const userSchema = new Schema({
     aboutUs: { type: Number, default: 0 },
     nutritionStrategy: { type: Number, default: 0 },
     ayurveda: { type: Number, default: 0 },
-    protien: { type: Number, default: 0 },
+    protein: { type: Number, default: 0 },
     diet: { type: Number, default: 0 },
 })
 

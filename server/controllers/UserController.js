@@ -31,9 +31,9 @@ export const signupUser = async (req, res) => {
  // Ensure correct path
 
 export const updateUserPageVisits = async (req, res) => {
-    const { userId, pageVisits } = req.body;
+    const { userId, pageVisited } = req.body;
 
-    if (!userId || !pageVisits || typeof pageVisits !== 'object') {
+    if (!userId || !pageVisited) {
         return res.status(400).json({ message: 'Invalid request format' });
     }
 
@@ -45,7 +45,7 @@ export const updateUserPageVisits = async (req, res) => {
         }
 
         // Iterate over each page in the pageVisits object and update the counters
-        Object.entries(pageVisits).forEach(([pageName, incrementBy]) => {
+        Object.entries(pageVisited).forEach(([pageName, incrementBy]) => {
             if (typeof user[pageName] === 'number') { // Check if the field exists and is a number
                 user[pageName] += incrementBy;
             }
@@ -55,7 +55,7 @@ export const updateUserPageVisits = async (req, res) => {
 
         return res.status(200).json({ message: 'Page visits updated successfully', user });
     } catch (error) {
-        console.log(error);
+        console.log(error)
         console.error('Error updating page visits:', error);
         return res.status(500).json({ message: 'Server error' });
     }

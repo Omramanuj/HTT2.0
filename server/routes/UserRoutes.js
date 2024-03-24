@@ -26,9 +26,12 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/login', verifyToken , async (req, res) => {
+    if(!req.user){
+        return res.status(401).send('Unauthorized');
+    }
     const currUser = await User.findById(req.user.id);
 
-    res.json({name: currUser.name, email: currUser.email});
+    res.json({userId:currUser.id,name: currUser.name, email: currUser.email});
 });
 
 // Route to handle user signup
@@ -37,6 +40,7 @@ router.post('/signup', (req, res) => {
 });
 
 router.post('/UpdatePagesVisited',(req,res)=>{
+    console.log(req.body);
     updateUserPageVisits(req,res);
 });
 // Route to save an image for a user

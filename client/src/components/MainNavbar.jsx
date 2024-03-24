@@ -155,13 +155,14 @@ export default function MainNavbar() {
               </NavItem>
               
               <NavItem>
-                <NavLink
-                  href="/aboutus"
+                <Link
+                  to="/aboutus"
                   onClick={() => handleNavLinkClick('aboutUs')}
+                  className="nav-link"
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
                   <p>About Us</p>
-                </NavLink>
+                </Link>
               </NavItem>
               <NavItem>
                 <NavLink

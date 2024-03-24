@@ -14,7 +14,7 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/scss/now-ui-kit.scss?v=1.5.0";
 import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
-import { PageVisitsProvider } from './PageVisitContext';
+
 
 export default function Client() {
   
@@ -33,7 +33,7 @@ export default function Client() {
       },[]);
   return (
     <>
-      <PageVisitsProvider>
+      <>
       <MainNavbar />
         <Routes>
           <Route path="/index" element={<Home />} />
@@ -42,7 +42,7 @@ export default function Client() {
           <Route path="/aboutus" element={<Aboutus />} /> 
           <Route path="*" element={<Navigate to="/index" replace />} />
         </Routes>
-      </PageVisitsProvider>
+      </>
     </>
   )
 }
