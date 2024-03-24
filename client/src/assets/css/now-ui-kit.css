@@ -7942,7 +7942,7 @@ td.rdtYear:hover {
   opacity: 0.6;
 }
 
-.clear-filter[filter-color="blue"] {
+.clear-filter[filter-color="green"] {
   background: rgba(44, 44, 44, 0.2);
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(
