@@ -1,20 +1,4 @@
-/*!
 
- =========================================================
- * Now UI Kit React - v1.5.2 based on Now UI Kit - v1.3.0
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/now-ui-kit-react
- * Copyright 2023 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit-react/blob/main/LICENSE.md)
-
- * Designed by www.invisionapp.com Coded by www.creative-tim.com
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -7128,26 +7112,26 @@ td.rdtYear:hover {
   color: #fff;
   opacity: 0.6;
 }
-.clear-filter[filter-color="blue"] {
-  background: rgba(44, 44, 44, 0.2);
+.clear-filter[filter-color="green"] {
+  background: rgba(21,128,61, 0.2);
   background: -webkit-linear-gradient(
     90deg,
-    rgba(44, 44, 44, 0.2),
+    rgba(21,128,61, 0.2),
     rgba(3, 161, 224, 0.6)
   );
   background: -o-linear-gradient(
     90deg,
-    rgba(44, 44, 44, 0.2),
+    rgba(21,128,61, 0.2),
     rgba(3, 161, 224, 0.6)
   );
   background: -moz-linear-gradient(
     90deg,
-    rgba(44, 44, 44, 0.2),
+    rgba(21,128,61, 0.2),
     rgba(3, 161, 224, 0.6)
   );
   background: linear-gradient(
     0deg,
-    rgba(44, 44, 44, 0.2),
+    rgba(21,128,61, 0.2),
     rgba(3, 161, 224, 0.6)
   );
 }

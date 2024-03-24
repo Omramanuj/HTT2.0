@@ -19,6 +19,7 @@ const Login = () => {
 
   const [formSignupData, setFormSignupData] = useState({
     name: '',
+    phone: '',
     email: '',
     password: '',
   });
@@ -87,6 +88,8 @@ const Login = () => {
             <input name='name' placeholder="Name" value={formSignupData.name}
                     onChange={handleSignupChange}/>
             <input type="email" name='email' placeholder="Email" value={formSignupData.email}
+                    onChange={handleSignupChange}/>
+            <input type="phone" name='phone' placeholder="Phone Number" value={formSignupData.phone}
                     onChange={handleSignupChange}/>
             <input type="password" name='password' placeholder="Password" value={formSignupData.password}
                     onChange={handleSignupChange} required/>

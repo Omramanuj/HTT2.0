@@ -32,11 +32,12 @@ export const ClientAuthProvider = ({ children }) => {
   useEffect(() => { isLoggedIn() }, [])
 
   const clientLogout = async () => {
-
+    localStorage.removeItem('clientToken');
+    setLoggedIn(false);
+    setUserDetails();
     try {
       // Ensure the userId is correctly obtained from userDetails
       const userId = userDetails.userId; // or whatever key holds the userId in your userDetails object
-      
       const response = await axios.post('http://localhost:5001/users/UpdatePagesVisited', {
         userId: userId,
         pageVisited: pageVisits // This key should match your backend expectation
@@ -44,16 +45,15 @@ export const ClientAuthProvider = ({ children }) => {
         headers: { Authorization: localStorage.getItem('clientToken') },
       });
       console.log('Page visits updated:', response.data);
-  
+
+
+      window.location.reload();
+
+
       // Reset page visits here if needed. You might need to add a reset function to your PageVisitsContext and call it here.
     } catch (error) {
       console.error('Error updating page visits:', error.response);
     }
-
-    setLoggedIn(false);
-    setUserDetails();
-    localStorage.removeItem('clientToken');
-    window.location.reload();
   };
 
   return (

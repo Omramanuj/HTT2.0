@@ -1,29 +1,4 @@
-/*!
 
- =========================================================
- * Now UI Kit React - v1.5.2 based on Now UI Kit - v1.3.0
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/now-ui-kit-react
- * Copyright 2023 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit-react/blob/main/LICENSE.md)
-
- * Designed by www.invisionapp.com Coded by www.creative-tim.com
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-/*     brand Colors              */
-/*      light colors         */
-/* ========================================================================
- * bootstrap-switch - v3.3.2
- * http://www.bootstrap-switch.org
- * ========================================================================
- * Copyright 2012-2013 Mattia Larentis
- * http://www.apache.org/licenses/LICENSE-2.0
- */
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -7120,16 +7095,6 @@ img {
   }
 }
 
-/*! nouislider - 14.0.2 - 6/28/2019 */
-/* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
-/*
-
-This file was modified by Creative-Tim
-
-*/
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;
@@ -7942,31 +7907,31 @@ td.rdtYear:hover {
   opacity: 0.6;
 }
 
-.clear-filter[filter-color="blue"] {
+.clear-filter[filter-color="green"] {
   background: rgba(44, 44, 44, 0.2);
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(
     90deg,
     rgba(44, 44, 44, 0.2),
-    rgba(3, 161, 224, 0.6)
+    rgba(21,128,61, 0.6)
   );
   /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(
     90deg,
     rgba(44, 44, 44, 0.2),
-    rgba(3, 161, 224, 0.6)
+    rgba(21,128,61, 0.6)
   );
   /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(
     90deg,
     rgba(44, 44, 44, 0.2),
-    rgba(3, 161, 224, 0.6)
+    rgba(21,128,61, 0.6)
   );
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(
     0deg,
     rgba(44, 44, 44, 0.2),
-    rgba(3, 161, 224, 0.6)
+    rgba(21,128,61, 0.6)
   );
   /* Standard syntax */
 }

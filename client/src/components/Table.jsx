@@ -65,7 +65,7 @@ return (
             rowsPerPageOptions={[5, 10]}
             checkboxSelection
         />
-        <button className='ml-3 btn btn-info' onClick={() => {fetchData}}>Refresh</button>
+        <button className='ml-3 btn btn-info' onClick={fetchData}>Refresh</button>
         <button className='absolute right-5 btn btn-danger' onClick={handleDelete}>Delete Selected</button>
     </div>
 );
