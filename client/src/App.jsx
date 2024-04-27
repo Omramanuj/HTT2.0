@@ -13,15 +13,19 @@ import Client from './Client';
 import { ClientAuthProvider } from './ClientAuth';
 import { AdminAuthProvider } from './AdminAuth';
 function App() {
+
+  console.log(window.location.pathname)
+  
   return (
     <div className="app">
       <PageVisitsProvider>
       {
         
-        window.location.pathname === "/admin" || window.location.pathname === "/dashboard"
+        window.location.pathname === "/admin" || window.location.pathname === "/dashboard" || window.location.pathname === "https://htt-2-0.vercel.app/admin"  
         ? 
         <AdminAuthProvider> <Admin /> </AdminAuthProvider >
         : 
+
         <ClientAuthProvider> <Client /> </ClientAuthProvider >
       }
       </PageVisitsProvider>
