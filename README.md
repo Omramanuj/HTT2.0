@@ -1,10 +1,12 @@
-# SAS Fat to Slim 
-
+# SAS Fat to Slim
 
 
 ## 📝 Problem Statement
 
 During the 24-hour long hackathon "Hack the Tank 2.0", we tackled the challenge of streamlining client data management and communication for "SAS Fit to Slim". The goal was to create an efficient web application consisting of a client-facing site and an admin portal to enhance user interaction and administrative monitoring.
+
+![SAS Fat to Slim](client/public/assets/preview/1.png)
+
 
 ## 💡 Our Solution
 
@@ -14,12 +16,16 @@ We developed two interconnected web platforms:
 - **Interactive UI:** Home, Services, About Us, and Contact pages.
 - **Customer Support:** Integrated chatbot and WhatsApp bot for easy appointment scheduling and queries.
 - **Extra Features:** A BMI calculator to engage and provide value to the clients.
+![SAS Fat to Slim](client/public/assets/preview/2.png)
+
+
 
 ### Admin Portal:
 - **Role-Based Access:** Secure login system with differentiated admin and user roles.
 - **User Activity Tracking:** Visual analytics for monitoring page visits and user engagement.
 - **Communication Hub:** Capability to send messages directly to users, with preset prompts and real-time data access.
 - **Data Management:** Tools for both individual and aggregated client data handling.
+![SAS Fat to Slim](client/public/assets/preview/3.png)
 
 
 
@@ -49,6 +55,7 @@ For the admin, we provided powerful back-end functionality that includes:
 - Session tracking for enhanced user experience understanding.
 - Predictive analytics to help anticipate client needs based on historical data.
 
+
 ## 🤖 Chatbot Integration
 
 Both client and admin sides are equipped with intelligent chatbots designed to:
@@ -58,7 +65,5 @@ Both client and admin sides are equipped with intelligent chatbots designed to:
 - Offer a personal touch to the digital experience.
 
 ---
-
-
 
 _**Note:** The data and interfaces mentioned are conceptual and built for the Hack the Tank 2.0 hackathon._
