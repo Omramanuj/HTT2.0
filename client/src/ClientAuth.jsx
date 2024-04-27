@@ -13,7 +13,7 @@ export const ClientAuthProvider = ({ children }) => {
       if (!localStorage.getItem('clientToken')) {
         console.log("Please Login First!")
       } else {
-        const response = await axios.get('http://localhost:5001/users/login', {
+        const response = await axios.get('https://htt-2-0-server.vercel.app/users/login', {
           headers: { Authorization: localStorage.getItem('clientToken') },
         });
         console.log('User profile:', response);
@@ -38,7 +38,7 @@ export const ClientAuthProvider = ({ children }) => {
     try {
       // Ensure the userId is correctly obtained from userDetails
       const userId = userDetails.userId; // or whatever key holds the userId in your userDetails object
-      const response = await axios.post('http://localhost:5001/users/UpdatePagesVisited', {
+      const response = await axios.post('https://htt-2-0-server.vercel.app/users/UpdatePagesVisited', {
         userId: userId,
         pageVisited: pageVisits // This key should match your backend expectation
       }, {
