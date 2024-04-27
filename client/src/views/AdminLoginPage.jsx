@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
   const handleLogin = async (e) => {
     try {
       e.preventDefault();
-      const response = await axios.post('http://localhost:5001/admin/login', formData);
+      const response = await axios.post('https://htt-2-0-server.vercel.app/admin/login', formData);
       if (response.status) {
         const { token } = response.data;
         localStorage.setItem('adminToken', token);
