@@ -11,7 +11,7 @@ export const AdminAuthProvider = ({ children }) => {
       if (!localStorage.getItem('adminToken')) {
         console.log("Please Login First!")
       } else {
-        const response = await axios.get('http://localhost:5001/admin/login', {
+        const response = await axios.get('https://htt-2-0-server.vercel.app/admin/login', {
           headers: { Authorization: localStorage.getItem('adminToken') },
         });
         console.log('Admin profile:', response);

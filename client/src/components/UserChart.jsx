@@ -9,7 +9,7 @@ const UserSelector = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/users');
+        const response = await axios.get('https://htt-2-0-server.vercel.app/users');
         setUsers(response.data);
         console.log('Users fetched:', response.data);
       } catch (error) {
