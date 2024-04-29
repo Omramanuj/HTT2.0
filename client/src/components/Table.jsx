@@ -9,7 +9,7 @@ export default function Table() {
     const { IsAdminLoggedIn } = useAuth();
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/users');
+            const response = await axios.get('https://htt-2-0-server.vercel.app/users');
             const usersWithIds = response.data.map((user, index) => ({ ...user, id: index + 1 }));
             console.log(response)
             setUserDB(usersWithIds);
@@ -38,7 +38,7 @@ export default function Table() {
     
 const handleDelete = async () => {
     try {
-        await axios.delete('http://localhost:5001/users/delete', { data: selectedIds });
+        await axios.delete('https://htt-2-0-server.vercel.app/users/delete', { data: selectedIds });
         console.log("Entries Deleted");
         fetchData();
     } catch (error) {
