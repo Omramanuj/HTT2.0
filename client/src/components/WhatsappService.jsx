@@ -20,7 +20,7 @@ export default function WhatsappService() {
     const { IsAdminLoggedIn } = useAuth();
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/users');
+            const response = await axios.get('https://htt-2-0-server.vercel.app/users');
             const usersWithIds = response.data.map((user, index) => ({ ...user, id: index + 1 }));
             console.log(response)
             setUserDB(usersWithIds);
